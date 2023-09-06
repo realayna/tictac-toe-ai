@@ -17,3 +17,20 @@ void displayBoard(const std::vector<std::vector<char>>& board) {
     }
     std::cout << std::endl;
 }
+
+bool isBoardFull(const std::vector<std::vector<char>>& board)
+{
+    for (int i = 0; i<BOARD_SIZE; ++i)
+    {
+        for (int j=0; j<BOARD_SIZE; ++j)
+        {
+            if (board[i][j]==EMPTY_CELL)
+            {
+                return false;
+
+            }
+        }
+    }
+    return true;
+    
+}
