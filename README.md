@@ -60,7 +60,7 @@ git clone <rhttps://github.com/realayna/tictac-toe-ai>
 2. Navigate to the project directory:
 
 ```shell
-cd tic-tac-toe-ai
+cd tictac-toe-ai
 ```
   
 
@@ -88,7 +88,7 @@ make
 After building the project, you can run the Tic-Tac-Toe game:
 
 ```shell
-./tic-tac-toe-ai
+./tictac-toe-ai
 ```
 ## How to Play
 
