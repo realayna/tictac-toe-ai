@@ -76,3 +76,7 @@ int evaluateBoard(const std::vector<std::vector<char>> &board)
         return 0;
     }
 }
+int minimax(std::vector<std::vector<char>>& board, int depth, bool isMaximizing)
+{
+    
+}
