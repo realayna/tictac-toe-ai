@@ -28,21 +28,26 @@ To build the project, follow these steps:
    ```shell
    git clone <rhttps://github.com/realayna/tictac-toe-ai>
 
+
 2. Navigate to the project directory:
   
   ```shell
   cd tic-tac-toe-ai
+
 
 3. Create a build directory and navigate to it:
    ```shell
    mkdir build
    cd build
 
+
 4. Generate build files with CMake:
     ```shell
     cmake ..
 
+
 5. Build the project:
     ```shell
     make
+
 
