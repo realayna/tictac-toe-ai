@@ -7,4 +7,11 @@ int main()
 {
     std::vector<std::vector<char>> board(BOARD_SIZE, std::vector<char>(BOARD_SIZE, EMPTY_CELL));
     bool playerTurn = true;
+    while (true)
+    {
+        displayBoard(board);
+
+    }
+    return 0;
+    
 }
