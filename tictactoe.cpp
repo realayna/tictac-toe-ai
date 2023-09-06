@@ -141,7 +141,7 @@ Move findBestMove(std::vector<std::vector<char>> &board)
         {
             if (board[i][j] == EMPTY_CELL)
             {
-                board[i][j] = PLAYER_X;
+                board[i][j] = PLAYER_O;
                 int moveVal = minimax(board, 0, false);
                 board[i][j] = EMPTY_CELL;
                 if (moveVal > bestVal)
