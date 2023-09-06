@@ -76,7 +76,53 @@ int evaluateBoard(const std::vector<std::vector<char>> &board)
         return 0;
     }
 }
-int minimax(std::vector<std::vector<char>>& board, int depth, bool isMaximizing)
+int minimax(std::vector<std::vector<char>> &board, int depth, bool isMaximizing)
 {
-    
+    int score = evaluateBoard(board);
+
+    if (score == 10 || score == -10)
+    {
+        return score;
+    }
+
+    if (isBoardFull(board))
+    {
+        return 0;
+    }
+    if (isMaximizing)
+    {
+        int maxEval = INT_MIN;
+        for (int i = 0; i < BOARD_SIZE; ++i)
+        {
+            for (int j = 0; j < BOARD_SIZE; ++j)
+            {
+                if (board[i][j] == EMPTY_CELL)
+                {
+                    board[i][j] = PLAYER_X;
+                    int eval = minimax(board, depth + 1, false);
+                    board[i][j] = EMPTY_CELL;
+                    maxEval = std::max(maxEval, eval);
+                }
+            }
+        }
+        return maxEval;
+    }
+    else
+    {
+        int minEval = INT_MAX;
+        for (int i = 0; i < BOARD_SIZE; ++i)
+        {
+            for (int j = 0; j < BOARD_SIZE; ++j)
+            {
+                if (board[i][j] == EMPTY_CELL)
+                {
+                    board[i][j] = PLAYER_O;
+                    int eval = minimax(board, depth + 1, true);
+                    board[i][j] = EMPTY_CELL;
+                    minEval = std::min(minEval, eval);
+                }
+            }
+        }
+        return minEval;
+    }
 }
