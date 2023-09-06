@@ -18,7 +18,6 @@ This is a simple implementation of the classic Tic-Tac-Toe game with an AI oppon
 
 -  [Contributing](#contributing)
 
--  [License](#license)
 
   
 
