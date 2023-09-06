@@ -126,3 +126,32 @@ int minimax(std::vector<std::vector<char>> &board, int depth, bool isMaximizing)
         return minEval;
     }
 }
+
+Move findBestMove(std::vector<std::vector<char>> &board)
+{
+    int bestVal = INT_MIN;
+    Move bestMove;
+    bestMove.row = -1;
+    bestMove.col = -1;
+
+    for (int i = 0; i < BOARD_SIZE; ++i)
+    {
+        for (int j = 0; j < BOARD_SIZE; ++j)
+        {
+            if (board[i][j] == EMPTY_CELL)
+            {
+                board[i][j] = PLAYER_X;
+                int moveVal = minimax(board, 0, false);
+                board[i][j] = EMPTY_CELL;
+                if (moveVal > bestVal)
+                {
+                    bestMove.row = i;
+                    bestMove.col = j;
+                    bestVal = moveVal;
+                }
+            }
+        }
+    }
+
+    return bestMove;
+}
