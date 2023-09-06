@@ -100,7 +100,7 @@ int minimax(std::vector<std::vector<char>> &board, int depth, bool isMaximizing)
                 if (board[i][j] == EMPTY_CELL)
                 {
                     board[i][j] = PLAYER_X;
-                    int eval = minimax(board, depth + 1, true);
+                    int eval = minimax(board, depth + 1, false);
                     board[i][j] = EMPTY_CELL;
                     maxEval = std::max(maxEval, eval);
                 }
@@ -118,7 +118,7 @@ int minimax(std::vector<std::vector<char>> &board, int depth, bool isMaximizing)
                 if (board[i][j] == EMPTY_CELL)
                 {
                     board[i][j] = PLAYER_O;
-                    int eval = minimax(board, depth + 1, false);
+                    int eval = minimax(board, depth + 1, true);
                     board[i][j] = EMPTY_CELL;
                     minEval = std::min(minEval, eval);
                 }
