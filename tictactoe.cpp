@@ -22,11 +22,12 @@ void displayBoard(const std::vector<std::vector<char>> &board)
     std::cout << std::endl;
 }
 
+
 bool isBoardFull(const std::vector<std::vector<char>> &board)
 {
-    for (int i = 0; i < BOARD_SIZE; ++i)
+    for (int i = 0; i < BOARD_SIZE; i++)
     {
-        for (int j = 0; j < BOARD_SIZE; ++j)
+        for (int j = 0; j < BOARD_SIZE;j++)
         {
             if (board[i][j] == EMPTY_CELL)
             {
@@ -39,7 +40,7 @@ bool isBoardFull(const std::vector<std::vector<char>> &board)
 
 bool isWinner(const std::vector<std::vector<char>> &board, char player)
 {
-    for (int i = 0; i < BOARD_SIZE; ++i)
+    for (int i = 0; i < BOARD_SIZE; i++)
     {
         if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
         {
@@ -110,9 +111,9 @@ int minimax(std::vector<std::vector<char>> &board, int depth, bool isMaximizing)
     else
     {
         int minEval = INT_MAX;
-        for (int i = 0; i < BOARD_SIZE; ++i)
+        for (int i = 0; i < BOARD_SIZE; i++)
         {
-            for (int j = 0; j < BOARD_SIZE; ++j)
+            for (int j = 0; j < BOARD_SIZE; j++)
             {
                 if (board[i][j] == EMPTY_CELL)
                 {
@@ -134,13 +135,13 @@ Move findBestMove(std::vector<std::vector<char>> &board)
     bestMove.row = -1;
     bestMove.col = -1;
 
-    for (int i = 0; i < BOARD_SIZE; ++i)
+    for (int i = 0; i < BOARD_SIZE; i++)
     {
-        for (int j = 0; j < BOARD_SIZE; ++j)
+        for (int j = 0; j < BOARD_SIZE; j++)
         {
             if (board[i][j] == EMPTY_CELL)
             {
-                board[i][j] = PLAYER_X;
+                board[i][j] = PLAYER_O;
                 int moveVal = minimax(board, 0, false);
                 board[i][j] = EMPTY_CELL;
                 if (moveVal > bestVal)
