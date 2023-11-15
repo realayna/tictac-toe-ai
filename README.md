@@ -52,7 +52,7 @@ To build the project, follow these steps:
   
 
 ```shell
-git clone <rhttps://github.com/realayna/tictac-toe-ai>
+git clone https://github.com/realayna/tictac-toe-ai.git
 ```
   
   
