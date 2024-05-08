@@ -1,8 +1,8 @@
-# Tic-Tac-Toe AI
+# Tic-Tac-Toe
 
   
 
-This is a simple implementation of the classic Tic-Tac-Toe game with an AI opponent. You can play against the AI, and it uses the minimax algorithm to make intelligent moves.
+
 
   
 
